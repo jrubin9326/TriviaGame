@@ -1,6 +1,6 @@
 // global variables
 var isGameStarted = false;
-var timer = 45 
+var time = 180  
 var answer; 
 var correct = 0; 
 var incorrect = 0; 
@@ -73,6 +73,7 @@ $("button").on("click", function(){
     x.addClass("hidden");
     startGame();
     $("#submit").show()
+    timer()
 })
 
 //initalize game
@@ -112,7 +113,8 @@ inputCheck = () => {
                         console.log(correct)
                     }else if (questions[i].correctAnswer != input){
                         incorrect ++; 
-                    } else if (checked === null) {
+                    }            
+                    else if (checked === null) {
                         unanswered ++; 
                     }
                 }
@@ -121,3 +123,12 @@ inputCheck = () => {
         })
         })
     };
+
+timer = () => {
+    setInterval(function(){
+        $("#timer").text("Time Remaining: "+ time + " Seconds")
+        time --
+    }, 1000)
+    };
+
+
