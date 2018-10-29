@@ -1,7 +1,7 @@
 body,html {
     background-image: url("../images/background1.jpg"); 
     background-position:center; 
-    height:100%;
+    height:auto; 
     background-repeat:no-repeat; 
     background-size:cover; 
 }
@@ -39,4 +39,9 @@ button {
 h2 {
     font-size: 20px;
     font-weight: bold; 
+}
+
+#submit {
+    display:hidden;
+    text-align:center; 
 }

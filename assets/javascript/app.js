@@ -71,29 +71,20 @@ $("button").on("click", function(){
     var x = $(this);
     x.addClass("hidden");
     startGame();
+    $("#submit").show()
 })
 
-function startGame() {
-    /// player can see one question at a time 
-    //looping thru questions
-        //if question is correct, toggles correct display 
-        
-            // loop thru answer array & dynamically geenerate button for each answer 
-            // $("#questionContent").empty()
+startGame = () => {          
+    // loop thru answer array & dynamically geenerate button for each answer 
             for (var i = 0; i < questions.length; i++) {
                 $("#questionContent").append("<form>" + "<h2>" + questions[i].question + "</h2>",
                 "<input type='radio' name='choiceA' value='1'<p>" + "   " + questions[i].choices[0] + "</p>",
                 "<input type='radio' name='choiceB' value='1'<p>" + "   " + questions[i].choices[1] + "</p>",
                 "<input type='radio' name=choiceC' value='1'<p>" + "   " + questions[i].choices[2] + "</p>",
                 "<input type='radio' name='choiceD' value='1'<p>" + "   " + questions[i].choices[3] + "</p>",
-                
-                
                 +"</form>")
                 
             }
-
-
-            
             // adding the button to the HTML
     
             // move to next question
