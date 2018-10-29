@@ -7,6 +7,7 @@ var incorrect = 0;
 var unanswered = 0
 var correctAnswer; 
 var checked= null;
+var score; 
 // array containing containing trivia questions
 var questions = 
     [
@@ -76,11 +77,6 @@ $("button").on("click", function(){
     timer()
 })
 
-//initalize game
-// initalize () => {
-//     //set timer
-//     timer = setInterval(startGame, 10000)
-// }
 
 startGame = () => { 
              
@@ -114,8 +110,8 @@ inputCheck = () => {
                     }else if (questions[i].correctAnswer != input){
                         incorrect ++; 
                     }            
-                    else if (checked === null) {
-                        unanswered ++; 
+                    else if (input.prop("checked") === null) {
+                        unanswered ++ 
                     }
                 }
                 }
@@ -132,3 +128,9 @@ timer = () => {
     };
 
 
+$("submit").on("click", function(){
+    $("form").hide()
+    $("button").hide()
+    score = $("div").text("Correct: " + correct, "Incorrect: " + incorrect, + "Unanswered: "+ unanswered)
+    ("h1").append(score); 
+})
