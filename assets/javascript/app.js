@@ -4,7 +4,7 @@ var timer = 45
 var answer; 
 var correct = 0; 
 var incorrect = 0; 
-var unanswered; 
+var unanswered = undefined; 
 var correctAnswer; 
 // array containing containing trivia questions
 var questions = 
@@ -74,26 +74,38 @@ $("button").on("click", function(){
     $("#submit").show()
 })
 
-startGame = () => {          
+//initalize game
+// initalize () => {
+//     //set timer
+//     timer = setInterval(startGame, 10000)
+// }
+
+startGame = () => { 
+             
     // loop thru answer array & dynamically geenerate button for each answer 
             for (var i = 0; i < questions.length; i++) {
                 $("#questionContent").append("<form>" + "<h2>" + questions[i].question + "</h2>",
-                "<input type='radio' name='choiceA' value='1'<p>" + "   " + questions[i].choices[0] + "</p>",
-                "<input type='radio' name='choiceB' value='1'<p>" + "   " + questions[i].choices[1] + "</p>",
-                "<input type='radio' name=choiceC' value='1'<p>" + "   " + questions[i].choices[2] + "</p>",
-                "<input type='radio' name='choiceD' value='1'<p>" + "   " + questions[i].choices[3] + "</p>",
+                "<input type='checkbox' name='choiceA' value='1'<p>" + "   " + questions[i].choices[0] + "</p>",
+                "<input type='checkbox' name='choiceB' value='1'<p>" + "   " + questions[i].choices[1] + "</p>",
+                "<input type='checkbox' name=choiceC' value='1'<p>" + "   " + questions[i].choices[2] + "</p>",
+                "<input type='checkbox' name='choiceD'<p>" + "   " + questions[i].choices[3] + "</p>",
                 +"</form>")
                 
             }
-            // adding the button to the HTML
-    
-            // move to next question
-        //else if incorrect, toggles incorrect (display
-            // move to next question
-        // else run out of time toggles time out display
-    
+           
+        //function to check if input answers are equal to the submitted answers 
+        inputCheck()
     // when questions are over shows number of correct,incorrect and unanswered responses
 
     //prompt to restartGame; 
 }
 
+inputCheck = () => {
+    $(document).ready(function(){
+        $('input[type="checkbox"]').click(function(){
+            if($(this).prop("checked") == true){
+                alert("Checkbox is checked.")
+        }
+        }
+    )}
+    )}; 
