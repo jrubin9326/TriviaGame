@@ -73,7 +73,6 @@ $("button").on("click", function(){
     var x = $(this);
     x.addClass("hidden");
     startGame();
-    $("#submit").show()
     timer()
 })
 
