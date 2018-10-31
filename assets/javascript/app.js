@@ -1,6 +1,6 @@
 // global variables
 let isGameStarted = false;
-let time = 180  // amount of time for quiz
+let time = 10  // amount of time for quiz
 let answer; 
 let correct = 0; 
 let incorrect = 0; 
@@ -69,10 +69,11 @@ var questions =
 //tags to HTML 
 var title = $(".title")
 //hide startgame button on click, and start game
-$(".startBtn").on("click", function(){
-    $(this).addClass(".hidden")
+$("button").on("click", function(){
+    $(this).hide()
     startGame();
     timer()
+    $("#submitBtn").show()
 })
 
 
@@ -126,12 +127,32 @@ timer = () => {
         $("#timer").text("Time Remaining: "+ time + " Seconds")
         time --;
     }, 1000)
+    stopTime()
     };
 
+// function to submit form when game is over 
+stopTime = (time) => {
+    if (time === 0) {
+        
+    }
+}
 // when form is submitted shows number of correct,incorrect and unanswered responses
 $("#submitBtn").on("click", function(){
     $("form").hide()
     $(this).hide()
-    score = $("div").text("Correct: " + correct, "Incorrect: " + incorrect, + "Unanswered: "+ unanswered)
-    ("h1").append(score); 
+    score = $("#scoreContent").text("Correct: " + correct)
+    ("#title").append(score); 
+    setInterval(reset(), 5000); 
 })
+
+//function to submit form 
+
+gameOver = () => {
+
+}
+
+reset = () => {
+    correct = 0
+    incorrect = 0
+    startGame()
+}
