@@ -1,13 +1,13 @@
 // global variables
-var isGameStarted = false;
-var time = 180  
-var answer; 
-var correct = 0; 
-var incorrect = 0; 
-var unanswered = 0
-var correctAnswer; 
-var checked= null;
-var score; 
+let isGameStarted = false;
+let time = 180  // amount of time for quiz
+let answer; 
+let correct = 0; 
+let incorrect = 0; 
+let unanswered = 0
+let correctAnswer; 
+let checked= null; // checks if user has picked an answer
+let score; 
 // array containing containing trivia questions
 var questions = 
     [
@@ -69,9 +69,8 @@ var questions =
 //tags to HTML 
 var title = $(".title")
 //hide startgame button on click, and start game
-$("button").on("click", function(){
-    var x = $(this);
-    x.addClass("hidden");
+$(".startBtn").on("click", function(){
+    $(this).addClass(".hidden")
     startGame();
     timer()
 })
@@ -86,13 +85,16 @@ startGame = () => {
                 "<input type='radio' name='choice' value='b'<p>" + "   " + questions[i].choices[1] + "</p>",
                 "<input type='radio' name='choice' value='c'<p>" + "   " + questions[i].choices[2] + "</p>",
                 "<input type='radio' name='choice' value ='d' <p>" + "   " + questions[i].choices[3] + "</p>",
+                
+
+                
                 +"</form>")
                 
             }
            
         //function to check if input answers are equal to the submitted answers 
         inputCheck()
-    // when questions are over shows number of correct,incorrect and unanswered responses
+    
            
     //prompt to restartGame; 
         }
@@ -122,14 +124,14 @@ inputCheck = () => {
 timer = () => {
     setInterval(function(){
         $("#timer").text("Time Remaining: "+ time + " Seconds")
-        time --
+        time --;
     }, 1000)
     };
 
-
-$("submit").on("click", function(){
+// when form is submitted shows number of correct,incorrect and unanswered responses
+$("#submitBtn").on("click", function(){
     $("form").hide()
-    $("button").hide()
+    $(this).hide()
     score = $("div").text("Correct: " + correct, "Incorrect: " + incorrect, + "Unanswered: "+ unanswered)
     ("h1").append(score); 
 })

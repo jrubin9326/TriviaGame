@@ -23,10 +23,10 @@ h1 {
     font-size:75px; 
 }
 
-button {
+.startBtn {
     display: inline-block;
     font-size: 20px; 
-    background-color: transparent; 
+    background-color: papayawhip; 
     text-transform: uppercase;
     color: #0099CC; 
     margin-bottom: 30px; 
@@ -42,12 +42,13 @@ h2 {
     font-weight: bold; 
 }
 
-#submit {
-    display:hidden;
-    text-align:center; 
-}
-
 #timer {
     font-size:30px; 
     padding-bottom: 10px; 
+}
+
+#submitBtn {
+    margin: 0 auto;
+    display: block;
+    /* display:none;  */
 }
