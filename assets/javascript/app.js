@@ -82,10 +82,10 @@ startGame = () => {
     // loop thru answer array & dynamically geenerate button for each answer 
             for (var i = 0; i < questions.length; i++) {
                 $("#questionContent").append("<form>" + "<h2>" + questions[i].question + "</h2>",
-                "<input type='radio' name='choice' value='a'<p>" + "   " + questions[i].choices[0] + "</p>",
-                "<input type='radio' name='choice' value='b'<p>" + "   " + questions[i].choices[1] + "</p>",
-                "<input type='radio' name='choice' value='c'<p>" + "   " + questions[i].choices[2] + "</p>",
-                "<input type='radio' name='choice' value ='d' <p>" + "   " + questions[i].choices[3] + "</p>",
+                "<input type='radio' name='choice'"+i+" value='a'<p>" + "   " + questions[i].choices[0] + "</p>",
+                "<input type='radio' name='choice'"+i +"value='b'<p>" + "   " + questions[i].choices[1] + "</p>",
+                "<input type='radio' name='choice'"+i+" value='c'<p>" + "   " + questions[i].choices[2] + "</p>",
+                "<input type='radio' name='choice'"+i+" value ='d' <p>" + "   " + questions[i].choices[3] + "</p>",
                 
 
                 
