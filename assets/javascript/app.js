@@ -80,18 +80,16 @@ $("button").on("click", function(){
 startGame = () => { 
              
     // loop thru answer array & dynamically geenerate button for each answer 
-            for (var i = 0; i < questions.length; i++) {
-                $("#questionContent").append("<form>" + "<h2>" + questions[i].question + "</h2>",
-                "<input type='radio' name='choice'"+i+" value='a'<p>" + "   " + questions[i].choices[0] + "</p>",
-                "<input type='radio' name='choice'"+i +"value='b'<p>" + "   " + questions[i].choices[1] + "</p>",
-                "<input type='radio' name='choice'"+i+" value='c'<p>" + "   " + questions[i].choices[2] + "</p>",
-                "<input type='radio' name='choice'"+i+" value ='d' <p>" + "   " + questions[i].choices[3] + "</p>",
-                
-
-                
-                +"</form>")
-                
-            }
+    for (var i = 0; i < questions.length; i++) {
+        $("#questionContent").append("<form>" + "<h2>" + questions[i].question + "</h2>",
+        "<input type='radio' name='choice" + i + "' value='a'<p>" + "   " + questions[i].choices[0] + "</p>",
+        "<input type='radio' name='choice" + i + "' value='b'<p>" + "   " + questions[i].choices[1] + "</p>",
+        "<input type='radio' name='choice" + i + "' value='c'<p>" + "   " + questions[i].choices[2] + "</p>",
+        "<input type='radio' name='choice" + i + "' value ='d' <p>" + "   " + questions[i].choices[3] + "</p>",
+        +"</form>")
+        
+                }   
+            
            
         //function to check if input answers are equal to the submitted answers 
         inputCheck()
